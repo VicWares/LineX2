@@ -3,22 +3,21 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.chart.renderer.category.LineAndShapeRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
 public class LineChartWithCategoryDatasetExample extends JFrame
 {
     public static JFreeChart chart;
     public static DefaultCategoryDataset dataset = new DefaultCategoryDataset();
     public LineChartWithCategoryDatasetExample()//Constructor
     {
-        super("LineX2 version 230222");
+        super("LineX2 version 230305");
         JPanel chartPanel = createChartPanel();
         add(chartPanel, BorderLayout.CENTER);
         setSize(1800, 1000);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
     }
     public static void main(String[] args)
     {
@@ -27,12 +26,12 @@ public class LineChartWithCategoryDatasetExample extends JFrame
             @Override
             public void run()
             {
-                new LineChartWithCategoryDatasetExample().setVisible(true);
-                extracted();
+                new LineChartWithCategoryDatasetExample();
+                buildDataSet();
             }
         });
     }
-    public static void extracted()
+    public static void buildDataSet()
     {
         for (int i = 0; i < 100; i++)
         {
